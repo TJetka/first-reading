@@ -2,9 +2,10 @@ import { cp, mkdir, mkdtemp, readFile, rename, rm, writeFile } from 'node:fs/pro
 import { execFileSync } from 'node:child_process';
 import { dirname, resolve } from 'node:path';
 import { audioPaths, catalogueCounts, validateCatalogue } from '../src/catalogue.js';
-import { approvedWords, checkRelease, selectPrototype, sha256, wordHash } from './content.mjs';
+import { approvedWords, checkRelease, readClip, selectPrototype, sha256, wordHash } from './content.mjs';
 import { isMain, readJSON, ROOT } from './validate.mjs';
 import { writeFilePreview } from './file-preview.mjs';
+import { validatePublicAudio } from './build-pages.mjs';
 
 /** Build atomically after every gate passes; source data is never modified. */
 export async function build({ root = ROOT, mode = 'release' } = {}) {
@@ -20,28 +21,38 @@ export async function build({ root = ROOT, mode = 'release' } = {}) {
   let clips = new Map();
   let pending = [];
   let draftAudioManifestHash = null;
+  let publicAudioManifestHash = null;
   if (mode === 'preview') {
     words = structuredClone(catalogue.words);
-    let draft;
-    try {
-      const draftBytes = await readFile(resolve(root, '.cache/draft-audio/manifest.json'));
-      draftAudioManifestHash = sha256(draftBytes);
-      draft = JSON.parse(draftBytes);
-    }
+    let publicBytes;
+    try { publicBytes = await readFile(resolve(root, 'content/public-audio.json')); }
     catch (error) { if (error.code !== 'ENOENT') throw error; }
-    for (const word of words) {
-      const contentHash = wordHash(word);
-      const replacements = new Map();
-      for (const path of audioPaths(word)) {
-        const record = draft?.clips[path];
-        if (!record || record.wordHash !== contentHash || record.path !== path.replace(/\.mp3$/, '.wav')) continue;
-        const buffer = await readFile(resolve(root, '.cache/draft-audio', record.path));
-        if (sha256(buffer) !== record.sha256) throw new Error(`Draft audio changed: ${path}`);
-        replacements.set(path, record.path);
-        clips.set(record.path, buffer);
+    if (publicBytes) {
+      await validatePublicAudio(catalogue, JSON.parse(publicBytes), root);
+      publicAudioManifestHash = sha256(publicBytes);
+      for (const path of new Set(words.flatMap(audioPaths))) clips.set(path, await readClip(root, path));
+    } else {
+      let draft;
+      try {
+        const draftBytes = await readFile(resolve(root, '.cache/draft-audio/manifest.json'));
+        draftAudioManifestHash = sha256(draftBytes);
+        draft = JSON.parse(draftBytes);
       }
-      word.wordAudio = replacements.get(word.wordAudio) ?? word.wordAudio;
-      for (const syllable of word.syllables) syllable.audio = replacements.get(syllable.audio) ?? syllable.audio;
+      catch (error) { if (error.code !== 'ENOENT') throw error; }
+      for (const word of words) {
+        const contentHash = wordHash(word);
+        const replacements = new Map();
+        for (const path of audioPaths(word)) {
+          const record = draft?.clips[path];
+          if (!record || record.wordHash !== contentHash || record.path !== path.replace(/\.mp3$/, '.wav')) continue;
+          const buffer = await readFile(resolve(root, '.cache/draft-audio', record.path));
+          if (sha256(buffer) !== record.sha256) throw new Error(`Draft audio changed: ${path}`);
+          replacements.set(path, record.path);
+          clips.set(record.path, buffer);
+        }
+        word.wordAudio = replacements.get(word.wordAudio) ?? word.wordAudio;
+        for (const syllable of word.syllables) syllable.audio = replacements.get(syllable.audio) ?? syllable.audio;
+      }
     }
   }
   else {
@@ -55,7 +66,7 @@ export async function build({ root = ROOT, mode = 'release' } = {}) {
   let gitSHA = null;
   try { gitSHA = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim(); } catch { /* Uninitialised checkout. */ }
   const metadata = { schemaVersion: 1, mode, catalogueHash: sha256(sourceBytes),
-    reviewHash: sha256(reviewBytes), draftAudioManifestHash, gitSHA, node: process.version,
+    reviewHash: sha256(reviewBytes), draftAudioManifestHash, publicAudioManifestHash, gitSHA, node: process.version,
     levels: mode === 'prototype' ? [1] : [1, 2], counts: catalogueCounts(words) };
   await mkdir(dirname(destination), { recursive: true });
   const stage = await mkdtemp(resolve(dirname(destination), '.build-'));

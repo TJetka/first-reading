@@ -1,10 +1,9 @@
 # Polish recordings
 
-Put MP3s at the exact paths in `word-catalogue.json` (`audio/w0001/word.mp3`, etc.).
-There are 1,300 planned release MP3s; none have been approved. Use one Polish voice.
-Record each syllable in its word context and each complete word naturally.
+The 1,300 MP3s at the catalogue paths use Piper's Polish Gosia voice. They are
+redistributable public-preview recordings; educator/pronunciation review is pending.
+See [NOTICE.md](NOTICE.md) for the source and [renderer instructions](../tools/audio/README.md).
 
-`npm run audio:generate` renders private draft WAVs into `.cache/draft-audio/`.
-The preview can play them; release builds exclude them. Do not substitute browser
-speech or approve generated recordings without listening to every clip.
+`npm run audio:generate` is the optional legacy macOS private WAV renderer.
+Those WAVs stay in `.cache/` and are never published. Local previews prefer the bundled MP3s.
 Follow [the review procedure](../BUILD.md#review-recordings) before publishing.

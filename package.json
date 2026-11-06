@@ -13,6 +13,7 @@
     "build": "node scripts/build.mjs release",
     "build:prototype": "node scripts/build.mjs prototype",
     "build:preview": "node scripts/build.mjs preview",
+    "build:pages": "node scripts/build-pages.mjs",
     "audio:generate": "node scripts/generate-audio.mjs",
     "dev": "node scripts/serve.mjs",
     "review": "node scripts/review.mjs"

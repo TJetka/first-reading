@@ -8,10 +8,10 @@
 | 4 | Read, listen, check, retry, finish and confirm exit using an accessible Polish UI. | Verified in Chrome; 320/768 px layouts checked |
 | 5 | Latest sound wins; failures preserve position; cancelled/stale playback cannot unlock advance. | Tested |
 | 6 | Build only reviewed text and exact reviewed audio; preserve source provenance; exercise integration tests. | Tested |
-| 7 | Record and review prototype clips, then 200–500 words; observe child use; test real devices. | 1,300 private draft clips generated; review/mobile gates pending |
-| 8 | Publish verified release to GitHub Pages and complete a mobile round. | Depends on 7 |
+| 7 | Record and review prototype clips, then 200–500 words; observe child use; test real devices. | 1,300 redistributable MP3s generated; review/mobile gates pending |
+| 8 | Publish the app at the Pages root and verify online; complete real mobile checks. | Public preview prepared; deployment check pending |
 
 No CI files are added: repository instructions require explicit approval for CI changes.
 
-Release blockers: native pronunciation/editorial review, redistributable audio,
+Reviewed-release gates: native pronunciation/editorial review,
 iPhone/Android and child observation. Source is published to GitHub on `main`.

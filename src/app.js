@@ -57,6 +57,7 @@ function homeView() {
     ${homeError ? '<p role="alert">Nie udało się wczytać słów. Spróbuj ponownie.</p>' : ''}
     ${homeError ? button('reload', 'Spróbuj ponownie', 'repeat') : button('start', 'Start', 'play', 'primary start')}
     <p class="home-note">12 słów. Tyle czasu, ile potrzebujesz.</p>
+    ${buildInfo.mode === 'public-preview' ? '<p class="preview-note">Wersja próbna. Czytaj razem z dorosłym.</p>' : ''}
   </section>`;
 }
 
@@ -208,7 +209,8 @@ async function load() {
       rawCatalogue = data.catalogue;
     } else {
       const [catalogueResponse, infoResponse] = await Promise.all([
-        fetch(new URL('./word-catalogue.json', document.baseURI)), fetch(new URL('./build-info.json', document.baseURI)),
+        fetch(new URL('./word-catalogue.json', document.baseURI), { cache: 'no-store' }),
+        fetch(new URL('./build-info.json', document.baseURI), { cache: 'no-store' }),
       ]);
       if (!catalogueResponse.ok || !infoResponse.ok) throw new Error('Load failed');
       buildInfo = await infoResponse.json();
