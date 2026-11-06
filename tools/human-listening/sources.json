@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "purpose": "human-speech-prototype",
+  "sources": [
+    {
+      "word": "mama",
+      "file": "mama.mp3",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/9/9f/Pl-mama.ogg/Pl-mama.ogg.mp3",
+      "page": "https://commons.wikimedia.org/wiki/File:Pl-mama.ogg",
+      "title": "Pl-mama.ogg",
+      "speaker": "Equadus",
+      "license": "CC BY-SA 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "originalSHA1": "c54d27ce6d520d7b1658b15210827ec262ae2823",
+      "sha256": "7e249dcefa5dde94d89753444a47fd2598f31604d705f9d5d709a52da91626a7",
+      "recordingText": "mama",
+      "wordRange": [0.25, 0.92],
+      "cuts": [[0.25, 0.56], [0.55, 0.92]]
+    },
+    {
+      "word": "domino",
+      "file": "domino.mp3",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/1/17/Pl-domino.ogg/Pl-domino.ogg.mp3",
+      "page": "https://commons.wikimedia.org/wiki/File:Pl-domino.ogg",
+      "title": "Pl-domino.ogg",
+      "speaker": "Equadus",
+      "license": "CC BY-SA 3.0",
+      "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "originalSHA1": "16b601f43357c7c8bc542bcebb550ab0c556b594",
+      "sha256": "443b0f2e68d4b65900d64c54d5d109d96b4d9650c54f35df06b1efc3af2f0401",
+      "recordingText": "domino",
+      "wordRange": [0.18, 0.95],
+      "cuts": [[0.20, 0.43], [0.42, 0.62], [0.61, 0.93]]
+    },
+    {
+      "word": "torebka",
+      "file": "torebka.wav",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/LL-Q809_%28pol%29-Poemat-torebka.wav",
+      "page": "https://commons.wikimedia.org/wiki/File:LL-Q809_(pol)-Poemat-torebka.wav",
+      "title": "LL-Q809 (pol)-Poemat-torebka.wav",
+      "speaker": "Poemat / Lingua Libre",
+      "license": "CC0 1.0",
+      "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "originalSHA1": "cbebd976ac396b9d29e7f7b6b3141269c74a7b98",
+      "sha256": "3e4cb0993dd3a58b5a4cff3ca353fb1c906a25014570fe7e8af8364be247ac31",
+      "recordingText": "torebka",
+      "wordRange": [0.18, 0.80],
+      "cuts": [[0.20, 0.33], [0.33, 0.56], [0.55, 0.78]]
+    },
+    {
+      "word": "malina",
+      "file": "malina.mp3",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6f/Pl-malina.ogg/Pl-malina.ogg.mp3",
+      "page": "https://commons.wikimedia.org/wiki/File:Pl-malina.ogg",
+      "title": "Pl-malina.ogg",
+      "speaker": "Frizabela",
+      "license": "CC BY 2.5",
+      "licenseURL": "https://creativecommons.org/licenses/by/2.5/",
+      "originalSHA1": "d2131895f1cb5a8f0c2404225be4c6d02bafac22",
+      "sha256": "d4b051473c53dd6ff81b6b3dbd4a319caf139aa8bd8aeee72cfc593dc01900d0",
+      "recordingText": "malina",
+      "wordRange": [0.17, 0.90],
+      "cuts": [[0.17, 0.42], [0.41, 0.67], [0.66, 0.89]]
+    },
+    {
+      "word": "szafa",
+      "file": "szafa-phrase.wav",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/0/07/LL-Q809_%28pol%29-Olaf-szafa_trzydrzwiowa.wav",
+      "page": "https://commons.wikimedia.org/wiki/File:LL-Q809_(pol)-Olaf-szafa_trzydrzwiowa.wav",
+      "title": "LL-Q809 (pol)-Olaf-szafa trzydrzwiowa.wav",
+      "speaker": "Olaf / Lingua Libre",
+      "license": "CC0 1.0",
+      "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "originalSHA1": "c6e77528e9fe7dc4203a2f65cb4d88c2f0bf58e9",
+      "sha256": "e2aa490b1ebe1a93cfd7ea450bb825a04e8785e3e71a219e67d95695e9190468",
+      "recordingText": "szafa trzydrzwiowa",
+      "wordRange": [0.22, 0.70],
+      "cuts": [[0.22, 0.51], [0.50, 0.70]]
+    }
+  ]
+}

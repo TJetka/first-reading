@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; media-src data: blob:; connect-src 'none'; img-src data:; base-uri 'none'; form-action 'none'">
+  <title>Human voice · Listening workshop</title>
+  <style>/* HUMAN_STYLES */</style>
+</head>
+<body>
+  <header><a class="brand" href="#main"><span aria-hidden="true">◒</span> Listening workshop</a><span class="badge">LOCAL PROTOTYPE · 01</span></header>
+  <main id="main">
+    <section class="intro"><div><p class="eyebrow">HUMAN SPEECH / POLISH</p><h1>A real voice.<br>A smaller cut.</h1><p>Start with a spoken word. Find its syllables.<br>Keep the sounds that still feel natural.</p></div><div class="steps"><p><b>01</b> Listen to the human word</p><p><b>02</b> Adjust a syllable’s edges</p><p><b>03</b> Compare, judge, export</p></div></section>
+    <div class="toolbar"><p id="progress">0 / 13 syllables judged</p><div><button id="export-review" class="quiet">Export review</button><label class="file-button quiet">Import review<input id="import-review" type="file" accept=".json,application/json" aria-label="Import review JSON"></label><button id="stop" class="quiet">Stop · Esc</button></div></div>
+    <p id="status" class="status" role="status" aria-live="polite">Saved in this browser when available. Export a review to keep your work.</p>
+    <div class="workspace"><aside><p class="eyebrow">FIVE WORDS</p><nav id="words" aria-label="Choose a word"></nav><p class="aside-note">Four speakers.<br>Real recordings.<br>No new synthesis.</p></aside>
+      <article>
+        <section class="word-panel"><div class="word-heading"><div><p class="eyebrow" id="word-counter">WORD 01 / 05</p><h2 id="word" lang="pl"></h2></div><span class="pill">HUMAN RECORDING</span></div><p id="speaker" class="muted"></p><div class="play-actions"><button id="play-word" class="primary">▶ Human word</button><button id="play-source">Original recording</button><button id="play-piper-word" class="quiet">Piper word</button></div><p id="phrase-note" class="small"></p></section>
+        <section class="editor"><div class="editor-heading"><div><p class="eyebrow">CUT EDITOR</p><h3 id="selection-title">Choose a syllable</h3></div><span id="duration" class="mono"></span></div>
+          <div id="segments" class="segments" role="group" aria-label="Choose an editable segment"></div>
+          <div class="wave-wrap"><canvas id="waveform" height="150" role="img" aria-label="Recording waveform. The shaded region is the selected cut."></canvas><div class="axis"><span>0.000 s</span><span id="source-duration"></span></div></div>
+          <div class="boundaries"><div class="boundary"><label for="start">Start <span>seconds</span></label><div class="number-row"><button data-nudge="start:-0.01" aria-label="Move start 10 milliseconds earlier">−10</button><input id="start" type="number" step="0.001" min="0" inputmode="decimal"><button data-nudge="start:0.01" aria-label="Move start 10 milliseconds later">+10</button></div><input id="start-range" type="range" min="0" step="0.001" aria-label="Cut start in seconds"></div><div class="boundary"><label for="end">End <span>seconds</span></label><div class="number-row"><button data-nudge="end:-0.01" aria-label="Move end 10 milliseconds earlier">−10</button><input id="end" type="number" step="0.001" min="0" inputmode="decimal"><button data-nudge="end:0.01" aria-label="Move end 10 milliseconds later">+10</button></div><input id="end-range" type="range" min="0" step="0.001" aria-label="Cut end in seconds"></div></div>
+          <div class="play-actions"><button id="play-cut" class="primary">▶ Listen to cut</button><button id="play-piper-cut">Piper reference</button><button id="download-cut" class="quiet">↓ WAV + credits</button></div>
+          <p class="hint">Starting cuts are rough and unreviewed. Keep the consonant onset and vowel ending; a little overlap is allowed. All playback is at the original speed.</p>
+        </section>
+        <section class="review"><div><label for="source-verdict">Is the human voice clear?</label><select id="source-verdict"><option value="unreviewed">Not judged yet</option><option value="good">Yes — useful source</option><option value="poor">No — reject this source</option></select></div><div><label for="cut-verdict">Does this cut work?</label><select id="cut-verdict"><option value="unreviewed">Not judged yet</option><option value="usable">Yes — sounds complete</option><option value="needs-work">No — needs work</option></select></div><div class="notes"><label for="note">Notes for this word</label><textarea id="note" rows="2" maxlength="2000" placeholder="Missing onset, extra sound, unnatural ending…"></textarea></div></section>
+        <details class="credits"><summary>Recording, license &amp; export details</summary><div id="credits"></div><p>WAV exports carry source credits and cut times in their metadata. CC BY-SA adaptations keep the source license. Export the review JSON to retain a readable record of all credits and edits.</p></details>
+      </article>
+    </div>
+    <footer>Adult listening experiment · 5 words / 13 syllables · Source quality and cut boundaries need your listening review.<br>Changes stay in this workshop. The reading app and its release approvals are unchanged.</footer>
+  </main>
+  <script id="human-data" type="application/json">/* HUMAN_DATA */</script>
+  <script type="module">/* HUMAN_SCRIPT */</script>
+</body>
+</html>

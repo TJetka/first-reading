@@ -10,6 +10,7 @@
 | 6 | Build only reviewed text and exact reviewed audio; preserve source provenance; exercise integration tests. | Tested |
 | 7 | Record and review prototype clips, then 200–500 words; observe child use; test real devices. | 1,300 redistributable MP3s generated; review/mobile gates pending |
 | 8 | Publish the app at the Pages root and verify online; complete real mobile checks. | Public app live; 1,310 files verified; real mobile checks pending |
+| 9 | Compare human recordings for five words; edit 13 syllable cuts and export credited WAVs/reviews locally. | Built; automated checks pass; browser/playback and listening review pending |
 
 No CI files are added: repository instructions require explicit approval for CI changes.
 

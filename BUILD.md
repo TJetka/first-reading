@@ -15,6 +15,9 @@ Without sockets, run `npm run build:preview` and open
 For audio comparisons, run `npm run compare` (port 8001), or `npm run compare:build`
 and open `.cache/listening-lab/compare/index.html`. [Lab guide](tools/listening/README.md).
 
+Human-recording prototype: `npm run human:fetch`, then `npm run human:build`.
+Open `.cache/listening-lab/human/index.html`; [setup and controls](tools/human-listening/README.md).
+
 ## GitHub Pages
 
 Pages publishes **main / (root)**. The root `index.html` opens the app; `.nojekyll`

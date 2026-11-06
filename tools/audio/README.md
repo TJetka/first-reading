@@ -4,6 +4,9 @@ Optional build tool only: Python 3.13, Piper and LAME. The web app has no Python
 Piper/ONNX are needed to render redistributable Polish speech ahead of time; models stay
 in `.cache/`, never Git. Versions are pinned in `uv.lock`.
 
+The [human voice prototype](../human-listening/README.md) uses miniaudio to decode
+public MP3/WAV recordings to portable PCM. It needs no speech model or synthesis.
+
 ```sh
 uv sync --project tools/audio --locked
 mkdir -p .cache/models/gosia

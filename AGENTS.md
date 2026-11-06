@@ -15,3 +15,4 @@
 - Record catalogue/review hashes, build mode and Git SHA in generated build metadata.
 - Optional speech tooling lives in `tools/audio/` with its own uv lockfile. Run `uv run pytest -q` and `uv run ruff check .` there after renderer changes; never commit models or virtual environments.
 - The adult listening lab in `tools/listening/` may save ratings in browser storage. Keep its generated audio/HTML and personal reviews in ignored local storage; it never changes app audio or approvals.
+- The human cut editor in `tools/human-listening/` follows the same local-only rule. Pin source hashes/licenses; preserve original recordings. Cuts and listening verdicts are experimental, not release approvals.
