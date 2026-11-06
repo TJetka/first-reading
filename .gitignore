@@ -1,0 +1,11 @@
+node_modules/
+.cache/
+dist/
+preview/
+coverage/
+test-results/
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
