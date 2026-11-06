@@ -1,0 +1,20 @@
+{
+  "name": "czytam-po-kawalku",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.0.0" },
+  "packageManager": "npm@11.12.1",
+  "scripts": {
+    "validate:catalogue": "node scripts/validate.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:coverage": "node --test --experimental-test-coverage tests/*.test.mjs",
+    "check": "npm run validate:catalogue && npm test",
+    "build": "node scripts/build.mjs release",
+    "build:prototype": "node scripts/build.mjs prototype",
+    "build:preview": "node scripts/build.mjs preview",
+    "audio:generate": "node scripts/generate-audio.mjs",
+    "dev": "node scripts/serve.mjs",
+    "review": "node scripts/review.mjs"
+  }
+}
