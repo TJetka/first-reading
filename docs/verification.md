@@ -1,21 +1,20 @@
 # Verification · 2026-11-06
 
-- Node 25.9.0 / npm 11.12.1: offline clean setup, catalogue validation and 47 tests pass.
-- Draws: 1,000 seeds per level; distinct IDs, level isolation, 5/5/2 order and variation.
-- Build: missing/stale approvals, changed clips, path escapes and stale output rejected.
-  Complete release/prototype builds tested with synthetic fixtures, never real approvals.
-- Audio bank: 1,300 mono 22,050 Hz WAVs; durations 0.249–1.551 s; all non-silent.
-  Signal checks do not establish correct pronunciation.
-- Chrome: complete rounds at both levels (advanced level uses a 12-word QA fixture),
-  repeat syllable, same-card retry, rapid double advance, finish, restart and reload.
-- Chrome responsive mode: 320 × 740 and 768 × 740; `szcze · nia · czek` fits one line.
-  Exit/continue preserves the card. Missing audio offers retry without unlocking Super.
-- Fixed during QA: compressed instruction spacing and keyboard focus after playback.
+- Node 25.9.0 / npm 11.12.1: catalogue validation and **49 tests pass**.
+- Optional Python 3.13 audio tool: **7 pytest tests pass**; ruff checks/format pass.
+- Draws: 1,000 seeds per level; unique IDs, level isolation and 5/5/2 ordering.
+- Builds reject stale approvals, changed clips, path escapes and missing public audio.
+  Release/prototype integration tests use synthetic fixtures, never invented approvals.
+- Public audio: 1,300 Gosia MP3s, 4.74 MB; every source PCM clip passed non-silence
+  and duration checks. These checks do not establish correct pronunciation.
+- [Live Pages app](https://tjetka.github.io/first-reading/) deployed from
+  [db2b2b5](https://github.com/TJetka/first-reading/commit/db2b2b53).
+  Downloaded all 1,310 runtime files, including all MP3s: every SHA-256 matches Git.
+- Live Chrome: app home replaces README; syllable playback, same-card retry,
+  complete 12-word easy round and return home pass.
+- Earlier local Chrome: both levels, restart/reload, exit confirmation and missing-audio
+  recovery pass; 320/768 px layouts fit `szcze · nia · czek` on one line.
 
-Pending: actual iPhone Safari / Android Chrome playback, screen-reader and reduced-motion
-device checks, native-speaker review, child observation, public Pages-path smoke test.
-Catalogue expanded to 500 words / 1,300 paths; inventory assertions updated accordingly.
-Published [implementation commit](https://github.com/TJetka/first-reading/commit/300e3efc78f27c10ced00de48fe9e98669dc54d9)
-downloaded from GitHub: all 38 tracked files matched local hashes. Clean offline install,
-47 tests and preview build passed from that download. All local branches (`main`) pushed.
-Pages HTTP check: **404** at `https://tjetka.github.io/first-reading/`; no live app deployed.
+Pending reviewed-release checks: native pronunciation/editorial review, actual iPhone
+Safari / Android Chrome, screen reader, reduced motion and child observation.
+The public preview remains available while these reviews are pending.
