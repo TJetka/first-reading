@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "mode": "public-preview",
+  "language": "pl-PL",
+  "levels": [
+    1,
+    2
+  ],
+  "catalogueHash": "188b13c846cc6e44691abbe4aeb081f69ed97969590eda1cae7b6e7a422a2822",
+  "publicAudioManifestHash": "4ec1fa36eb135cbbefca774ea296a5810948fb02484e6d05149090b0abb8478d",
+  "sourceHash": "aaeeac689c0e7cfecb2132dc7cc29c09b2baa71f6ef8fe881c0ace6f2397ab1c",
+  "sourceHashes": {
+    "index.html": "5c5fe96b4f107f5cf946d2986b812be21ab6e5ababf7e8d47a86a527281aa8e0",
+    "app.js": "cb297f94ad032e939bea825759f7c7d9fdaa0c146ff66254a835bcd60accd434",
+    "audio.js": "b71edfd5c2294db47c13b14123e771b24cb98eae70a97fd21ceba6aee6a467b1",
+    "catalogue.js": "3be74e6bb47fba0e0ea5482fab7ad69b1934824a11f8c00f34bb2b09de17c3b4",
+    "round.js": "7a20b5a686d612053fff0bd99df8c4831b48b21a64dba207702fbac4b7313692",
+    "styles.css": "a28d2796941b17f0acf59fb34c56b3e3ebf1e41c899a5ee84aae903780d3d872",
+    "tokens.css": "6bbc4b190e72deb1ffc1db0478cab64bb08d62e2937e22107930b7b29b5f0e45",
+    "favicon.svg": "a1382553d575abd45a782586e7a52eb7e61de9381c50d8f5cecbb130d8d79ca2"
+  },
+  "gitSHA": "c229b3fd1322316bbae009a040fa2d95c29c18fd",
+  "node": "v25.9.0",
+  "counts": {
+    "total": 500,
+    "levels": {
+      "1": [
+        80,
+        110,
+        60
+      ],
+      "2": [
+        80,
+        110,
+        60
+      ]
+    },
+    "categories": {
+      "Zwierzęta": 80,
+      "Dom i ubrania": 79,
+      "Ludzie i ciało": 57,
+      "Jedzenie": 67,
+      "Przyroda": 63,
+      "Szkoła i zabawa": 64,
+      "Podróże i miejsca": 49,
+      "Czynności": 41
+    }
+  },
+  "audioFiles": 1300,
+  "voice": "pl_PL-gosia-medium",
+  "reviewStatus": "pending"
+}

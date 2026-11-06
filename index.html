@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f6ee">
+    <meta name="description" content="Czytaj po swojemu. Krótkie słowa, pomocne sylaby i małe kroki w nauce czytania.">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+    <title>Czytam po kawałku</title>
+    <link rel="icon" href="./src/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./src/styles.css?v=aaeeac689c0e">
+    <script type="module" src="./src/app.js?v=aaeeac689c0e"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand"><img src="./src/favicon.svg" alt="" width="34" height="34"><span>czytam <strong>po kawałku</strong></span></div>
+      <button id="home-button" class="icon-button" type="button" aria-label="Na start" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v11h5v-6h4v6h5V9"/></svg>
+      </button>
+    </header>
+    <main id="app" tabindex="-1">
+      <p class="loading" role="status">Już za chwilę…</p>
+    </main>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+    <footer><span class="footer-flower" aria-hidden="true">✳</span> Każde słowo to mały krok.</footer>
+    <dialog id="exit-dialog" aria-labelledby="exit-title">
+      <h2 id="exit-title">Zakończyć rundę?</h2>
+      <div class="dialog-actions">
+        <button id="continue-button" class="button primary" autofocus>Czytaj dalej</button>
+        <button id="end-button" class="button secondary">Zakończ</button>
+      </div>
+    </dialog>
+    <noscript>Włącz JavaScript, żeby rozpocząć czytanie.</noscript>
+  </body>
+</html>
