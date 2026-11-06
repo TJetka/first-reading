@@ -16,6 +16,9 @@ Open `http://localhost:8000/first-reading/`. Node 25.9.0 is pinned; Node 22+ wor
 Without a server, run `npm run build:preview` and open
 `preview/first-reading/local-preview.html` directly in Chrome.
 
+Compare syllable audio locally: `npm run compare`, or `npm run compare:build` for
+an offline HTML file. See the [listening lab](tools/listening/README.md).
+
 - `src/`: interface, catalogue validation, round state and audio controller.
 - `scripts/`: validation, review manifests, static builds and local server.
 - `tests/`: deterministic draw, flow, audio and build checks.

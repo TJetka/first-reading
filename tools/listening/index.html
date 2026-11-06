@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; media-src data: blob:; connect-src 'none'; img-src data:; base-uri 'none'; form-action 'none'">
+  <title>Syllable listening lab</title>
+  <style>/* LAB_STYLES */</style>
+</head>
+<body>
+  <header class="topbar"><div class="brand"><span class="brand-mark" aria-hidden="true">≋</span><div>Listening lab<small>Czytam po kawałku</small></div></div><span class="local-badge">LOCAL EXPERIMENT</span></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">SMALL SOUNDS, CLOSE LISTENING</p><h1>Find a clearer syllable.</h1><p>Compare the same sound in its word. Judge pronunciation, completeness and a comfortable pace.</p></div><div class="progress-box"><strong id="progress">0 / 20</strong><span>preferences recorded</span><progress id="progress-bar" max="20" value="0"></progress></div></section>
+    <div class="toolbar"><label class="switch"><input id="blind" type="checkbox" checked> Hide method names</label><label class="switch"><input id="pending" type="checkbox"> Unreviewed only</label><button id="export-json" class="quiet">Export review</button><button id="export-csv" class="quiet">Export CSV</button><label class="file-button quiet">Import review<input id="import-review" aria-label="Import review JSON" type="file" accept=".json"></label></div>
+    <p id="status" class="status" role="status" aria-live="polite">Ratings and notes save in this browser. Export a review to keep a portable copy.</p>
+    <div class="workspace"><aside><label for="search" class="eyebrow">TRIAL QUEUE</label><input id="search" type="search" placeholder="Find a word or syllable…" autocomplete="off"><nav id="queue" aria-label="Syllable trials"></nav></aside><div id="trial"></div></div>
+    <details class="import-panel"><summary>Add a voice for comparison</summary><p>Import MP3 or WAV clips from Azure, another generator, or a recording. Name each clip by trial ID, for example <code>w0369-2.mp3</code> for “mi” in “domino”. Imported audio stays in this tab; reimport the same files after reopening. Reviews retain each file’s hash.</p><label>Voice / method label<input id="voice-label" maxlength="100" value="External voice"></label><label class="file-button">Choose clips<input id="import-clips" aria-label="Import comparison audio clips" type="file" accept="audio/mpeg,audio/wav,audio/x-wav,.mp3,.wav" multiple></label><button id="download-list" class="quiet">Download sample list</button></details>
+    <footer>20 word-specific trials · 4 Piper variants · experimental pronunciation, awaiting listening review.<br>Nothing is uploaded. This tool does not change the reading app or its approvals. Shortcuts: 1–4 play a sample, ← / → change trial, Esc stops sound.</footer>
+  </main>
+  <script id="lab-data" type="application/json">/* LAB_DATA */</script>
+  <script type="module">/* LAB_SCRIPT */</script>
+</body>
+</html>

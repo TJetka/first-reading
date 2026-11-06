@@ -12,6 +12,9 @@ Restart `dev` after source edits. Bundled Polish MP3s work on a clean checkout.
 Without sockets, run `npm run build:preview` and open
 `preview/first-reading/local-preview.html` in Chrome.
 
+For audio comparisons, run `npm run compare` (port 8001), or `npm run compare:build`
+and open `.cache/listening-lab/compare/index.html`. [Lab guide](tools/listening/README.md).
+
 ## GitHub Pages
 
 Pages publishes **main / (root)**. The root `index.html` opens the app; `.nojekyll`

@@ -18,3 +18,14 @@
 Pending reviewed-release checks: native pronunciation/editorial review, actual iPhone
 Safari / Android Chrome, screen reader, reduced motion and child observation.
 The public preview remains available while these reviews are pending.
+
+## Local listening lab
+
+- 20 trials × four Piper variants, plus whole-word context; 100 embedded audio slots.
+- 53 Node tests and 12 pytest tests pass; ruff checks/format pass.
+- Safari offline page: waveforms, sample/word playback, method reveal, preference and
+  rating persistence across reload verified; temporary QA choices cleared.
+- External clip import UI verification was interrupted by the native file chooser;
+  review validation, hash binding, CSV safety and offline packaging have automated tests.
+- Local socket binding is restricted in this agent session. Open the generated HTML
+  directly, or run `npm run compare` from a normal terminal. Mobile layout QA pending.

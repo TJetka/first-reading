@@ -14,3 +14,4 @@
 - Use coherent commits and normal pushes when Git access permits. Do not commit generated output or large recordings without project approval.
 - Record catalogue/review hashes, build mode and Git SHA in generated build metadata.
 - Optional speech tooling lives in `tools/audio/` with its own uv lockfile. Run `uv run pytest -q` and `uv run ruff check .` there after renderer changes; never commit models or virtual environments.
+- The adult listening lab in `tools/listening/` may save ratings in browser storage. Keep its generated audio/HTML and personal reviews in ignored local storage; it never changes app audio or approvals.

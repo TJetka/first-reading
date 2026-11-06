@@ -9,13 +9,14 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; ch
   '.svg': 'image/svg+xml', '.mp3': 'audio/mpeg', '.wav': 'audio/wav' };
 
 /** Serve only generated assets; never expose the checkout, review files or secrets. */
-export function createStaticServer(directory) {
+export function createStaticServer(directory, { basePath = '/first-reading' } = {}) {
+  if (!/^\/[a-z][a-z0-9-]*$/.test(basePath)) throw new Error('Invalid server base path');
   return createServer(async (request, response) => {
     try {
       if (!['GET', 'HEAD'].includes(request.method)) { response.writeHead(405).end(); return; }
       const path = decodeURIComponent(new URL(request.url, 'http://localhost').pathname);
-      if (path === '/' || path === '/first-reading') {
-        response.writeHead(302, { Location: '/first-reading/' }).end(); return;
+      if (path === '/' || path === basePath) {
+        response.writeHead(302, { Location: `${basePath}/` }).end(); return;
       }
       const pieces = path.split('/');
       if (pieces.some((piece) => piece.startsWith('.') || piece.includes('\\') || piece.includes('\0'))) {
